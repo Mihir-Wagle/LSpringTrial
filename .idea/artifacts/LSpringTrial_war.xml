@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="LSpringTrial:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="LSpringTrial.war">
+      <element id="artifact" artifact-name="LSpringTrial:war exploded" />
+    </root>
+  </artifact>
+</component>
