@@ -40,6 +40,15 @@ public class InMemoryProductRepository implements ProductRepository {
 
     @Override
     public List<Product> getAllProducts() {
+//        ApplicationContext context =
+//                new ClassPathXmlApplicationContext("mvc-dispatcher-servlet.xml");
+//        JdbcTemplate jdbcTemplateObject;
+//        /*jdbcTemplateObject = new JdbcTemplate(dataSource);
+//
+//        System.out.println("------Records Creation--------" );
+//        studentJDBCTemplate.create("Zara", 11);
+//        studentJDBCTemplate.create("Nuha", 2);
+//        studentJDBCTemplate.create("Ayan", 15);*/
         return listOfProducts;
 
     }

@@ -1,7 +1,10 @@
 package com.springapp.mvc.controllers;
 
+import com.springapp.mvc.domain.implementation.DatabaseRepository;
 import com.springapp.mvc.domain.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,10 +15,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ProductController {
+    @Qualifier("inMemoryProductRepository")
     @Autowired
     private ProductRepository productRepository;
 
-    @RequestMapping("/products")
+    @Autowired
+    private DatabaseRepository databaseRepository;
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    @RequestMapping("/productsDb")
     public String list(Model model) {
 
 //        Product iphone = new Product("P1234", " iPhone 5s", 500);
@@ -26,10 +36,24 @@ public class ProductController {
 //        model.addAttribute("product", iphone);
 
 //        model.addAttribute("product", new Product("P1234", " iPhone 5s", 500));
-        model.addAttribute("products", productRepository.getAllProducts());
+
+//        String sql = "insert into Product values (?, ?)";
+//        jdbcTemplate.update(sql, new Object[]{53, "MData"});
+        jdbcTemplate.update("insert into Product values (490, 'Trial')");
+
+//        model.addAttribute("products", productRepository.getAllProducts());
+
+        model.addAttribute("products", databaseRepository.getAllProducts());
 
         return "products";
     }
+
+    @RequestMapping("/productsInMemory")
+    public String listInMemory(Model model) {
+        model.addAttribute("products", productRepository.getAllProducts());
+        return "products";
+    }
+
 }
 
 
