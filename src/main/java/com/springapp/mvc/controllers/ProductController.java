@@ -39,7 +39,7 @@ public class ProductController {
 
 //        String sql = "insert into Product values (?, ?)";
 //        jdbcTemplate.update(sql, new Object[]{53, "MData"});
-        jdbcTemplate.update("insert into Product values (490, 'Trial')");
+//        jdbcTemplate.update("insert into Product values (53, 'BobQuestion')");
 
 //        model.addAttribute("products", productRepository.getAllProducts());
 

@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class ProductResultSetExtractor implements ResultSetExtractor {
 
     @Override
-    public Object extractData(ResultSet rs) throws SQLException {
+    public Product extractData(ResultSet rs) throws SQLException {
         Product product = new Product();
         product.setUnitPrice(rs.getFloat(1));
         product.setName(rs.getString(2));

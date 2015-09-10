@@ -34,7 +34,6 @@ public class InMemoryProductRepository implements ProductRepository {
         listOfProducts.add(iphone);
         listOfProducts.add(laptop_dell);
         listOfProducts.add(tablet_Nexus);
-        System.out.println("MIHIR get all values");
     }
 
 
