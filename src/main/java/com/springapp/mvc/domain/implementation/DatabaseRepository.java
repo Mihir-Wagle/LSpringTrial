@@ -21,7 +21,7 @@ public class DatabaseRepository implements ProductRepository{
     public List<Product> getAllProducts() {
         return jdbcTemplate
                 .query("select  * from Product where ID = ?",
-                        new Object[] { 53 },
+                        new Object[] { 253 },
                         new ProductRowMapper());
     }
 }
