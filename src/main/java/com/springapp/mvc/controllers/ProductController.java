@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ProductController {
     @Qualifier("inMemoryProductRepository")
+//@Qualifier("databaseRepository")
+
     @Autowired
     private ProductRepository productRepository;
 
@@ -40,7 +42,7 @@ public class ProductController {
 //        String sql = "insert into Product values (?, ?)";
 //        jdbcTemplate.update(sql, new Object[]{53, "MData"});
 //        jdbcTemplate.update("insert into Product values (53, 'BobQuestion')");
-        jdbcTemplate.update("insert into product values (253, 'Query')");
+        jdbcTemplate.update("INSERT INTO product VALUES (253, 'Query')");
 
 //        model.addAttribute("products", productRepository.getAllProducts());
 //
